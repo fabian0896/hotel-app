@@ -14,7 +14,7 @@ class App extends Component {
         <NavBarLayout />
         <PageContainer>
           <Switch>
-            <Route exact path="/" component={Inicio}  />
+            <Route exact path="/inicio" component={Inicio}  />
             <Route exact path="/reservas" component={Reservas}  />
           </Switch>
         </PageContainer>

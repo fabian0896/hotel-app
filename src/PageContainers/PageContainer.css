@@ -1,6 +1,6 @@
 .Page-container{
     overflow-y: auto;
-    height: 100%;
+    height: 100vh;
 }
 
 .Header{
@@ -16,7 +16,7 @@
     font-size: 75px;
     letter-spacing: 1px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .Content{

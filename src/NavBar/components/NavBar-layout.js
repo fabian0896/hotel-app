@@ -8,7 +8,7 @@ class NavBarLayout extends React.Component{
         const routes = [
             {
                 title: 'Inicio',
-                route: '/'
+                route: '/inicio'
             },
             {
                 title: 'Reservas',
