@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import NavBarLayout from '../NavBar/components/NavBar-layout';
 import PageContainer from '../PageContainers/PageContainer';
-import Inicio from '../Pages/Inicio';
-import Reservas from '../Pages/Reservas';
+import Inicio from '../Pages/Inicio/Inicio'
+import Reservas from '../Pages/Reservas/Reservas'
 
 class App extends Component {
   render() {

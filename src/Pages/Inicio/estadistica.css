@@ -1,0 +1,28 @@
+.Estadisticas{
+    display: flex;
+    align-items: center;
+}
+
+.Estadistica-icon{
+    font-size: 60px;
+    color: #707070;
+    margin-right: 5px;
+}
+
+.Estadistica-info{
+    
+}
+
+.Estadistica-Title{
+    color: #909090;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.Estadistica-value{
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+}
