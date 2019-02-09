@@ -4,6 +4,23 @@ import UserInfo from './UserInfo';
 import Menu from './Menu';
 
 class NavBarLayout extends React.Component{
+    
+    state ={
+        showMenu: false
+    }
+    
+    handleClick = ()=>{
+        this.setState({
+            showMenu: !this.state.showMenu
+        })
+    } 
+    
+    handleClose = ()=>{
+        this.setState({
+            showMenu: false
+        })
+    }
+
     render(){
         const routes = [
             {
@@ -23,10 +40,15 @@ class NavBarLayout extends React.Component{
                 route: '/configuracion'
             }
         ]
+
+        const iconMenuClass = `fas ${this.state.showMenu? 'fa-times': 'fa-bars'}`
+
         return(
+            
             <div className="NavBar">
+                <button onClick={this.handleClick} className='BurguerButton'><i className={iconMenuClass}></i></button>
                 <UserInfo />
-                <Menu routes={routes} />
+                <Menu handleClose={this.handleClose} showMenu={this.state.showMenu} routes={routes} />
             </div>
         )
     }

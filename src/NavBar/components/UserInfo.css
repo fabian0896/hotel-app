@@ -43,3 +43,38 @@
     width: 180px;
     border: 1px solid #718093;
 }
+
+
+@media only screen and (max-width: 1090px){
+    .User-email{
+        display: none;
+    }
+    .User-roll{
+        display: none;
+    }
+    .User-divider{
+        display: none;
+    }
+    .User-image{
+        margin-left: 5px;
+        margin-bottom: 0;
+        order: 1;
+        width: 35px;
+        height: 35px;
+    }
+    .User-name{
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+    .User{
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 60px;
+        padding: 0 10px;
+        align-items: center;
+        box-sizing: border-box;
+        background: #353B48;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+}

@@ -16,8 +16,8 @@ function CardContainer(props){
         {
             props.children.map((content, index)=>{
                 return (
-                        <div className="CardContainer-item">
-                            <Card key={index} >{content}</Card>
+                        <div key={index} className="CardContainer-item">
+                            <Card >{content}</Card>
                         </div>
                 )
             })

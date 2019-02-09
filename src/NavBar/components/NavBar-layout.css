@@ -1,6 +1,35 @@
 .NavBar{
-    width: 265px;
+    width: 100%;
     background: #353B48;
     height: 100vh;
     box-shadow: 3px 0px 6px rgba(0, 0, 0, .16);
 }
+
+.BurguerButton{
+    display: none;
+}
+
+.fa{
+    transition: .3s;
+}
+
+
+@media only screen and (max-width: 1090px){
+    .NavBar{
+        height: 60px;
+        position: relative;
+        z-index: 2;
+    }
+    .BurguerButton{
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        background: transparent;
+        border: none;
+        font-size: 30px;
+        outline: none;
+    }
+  }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import NavBarLayout from '../NavBar/components/NavBar-layout';
 import PageContainer from '../PageContainers/PageContainer';
@@ -16,6 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/inicio" component={Inicio}  />
             <Route exact path="/reservas" component={Reservas}  />
+            <Redirect from='/' to="/inicio" />
           </Switch>
         </PageContainer>
       </div>

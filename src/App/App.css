@@ -2,6 +2,12 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 265px 1fr;
-  grid-template-rows: 1fr;
+}
+
+
+@media only screen and (max-width: 1090px){
+  .App{
+    grid-template-columns: 1fr;
+  }
 }
 

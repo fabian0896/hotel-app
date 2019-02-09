@@ -57,4 +57,24 @@
     background: rgba(255,255,255, .08);
 }
 
+.Show{
+
+}
+
+@media only screen and (max-width: 1090px){
+    .Menu{
+        height: auto;
+        overflow: hidden;
+        background: #353B48;
+        transition: .3s;
+        margin-top: 0;
+        transform: translateY(-100%);
+        position: relative;
+        z-index: -1;
+    } 
+    .Show{
+        transform: translate(0);
+    }
+}
+
 
