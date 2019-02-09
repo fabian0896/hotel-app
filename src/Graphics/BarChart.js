@@ -19,7 +19,7 @@ class BarChart extends React.Component{
             <Fragment>
                 <h2>Pasajeros Por Mes</h2>
                 <Bar
-                    height={170}
+                    
                     data={data}
                     options={{
                         maintainAspectRatio: true,
