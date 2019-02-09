@@ -1,0 +1,16 @@
+.CardContainer{
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    
+
+}
+
+.CardContainer-item{
+    min-width: 0;
+}
+
+
+
+

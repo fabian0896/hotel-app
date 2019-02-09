@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import Card from '../../PageContainers/Card';
 import Estadistica from './estadistica';
+import BarChart from '../../Graphics/BarChart';
+import CardContainer from '../../PageContainers/CardContainer';
 
 class Inicio extends Component{
     render(){
@@ -12,7 +14,10 @@ class Inicio extends Component{
                     <Estadistica/>
                     <Estadistica/>
                 </Card>
-               
+                <CardContainer>
+                    <BarChart />
+                    <BarChart />
+                </CardContainer>
             </Fragment>
         )
     }
