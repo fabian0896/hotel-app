@@ -10,9 +10,9 @@ class PageContainer extends React.Component{
             <div className="Page-container">
               <header className="Header">
               </header>
-              <div className="Content">
+              <div className="Content-wraper">
                 <h1 className="Header-title">{ title.charAt(0).toUpperCase() + title.slice(1) }</h1>
-                <div>
+                <div className="Content">
                     {this.props.children}
                 </div>
               </div>  

@@ -2,12 +2,15 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 265px 1fr;
+  min-height: 0;
 }
 
 
 @media only screen and (max-width: 1090px){
   .App{
     grid-template-columns: 1fr;
+    width: 100%;
+    position: fixed;
   }
 }
 

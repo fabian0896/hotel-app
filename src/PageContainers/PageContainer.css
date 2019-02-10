@@ -1,6 +1,8 @@
 .Page-container{
-    overflow-y: auto;
     height: 100vh;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .Header{
@@ -19,7 +21,7 @@
     margin-bottom: 8px;
 }
 
-.Content{
+.Content-wraper{
     margin: 0;
     padding: 0;
     max-width: 1000px;
@@ -28,28 +30,43 @@
     height: calc(100vh - 60px);
 }
 
+.Content{
+    height: wrap;
+}
 
 
 
-@media screen and (max-width: 1265px){
-    .Content{
+
+@media screen and (max-width: 1280px){
+    .Content-wraper{
         max-width: 800px;
     }
 }
 
 @media screen and (max-width: 1090px){
-    .Content{
+    .Content-wraper{
         
+    } 
+    .Page-container{
+        height: calc(100vh - 60px);
     }
+
 }
 
 @media screen and (max-width: 830px){
-    .Content{
-        width: 100%;
+    .Content-wraper{
         margin-left: 10px;
         margin-right: 10px;
         min-width: 0;
         max-width: none;
         box-sizing: border-box;
     }
+    .Page-container{
+        height: calc(100vh - 60px);
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 645px){
+    
 }
