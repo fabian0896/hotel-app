@@ -1,12 +1,14 @@
 
-const user = {
-    name: '',
-    email: '',
-    rol: '',
-    picture: ''
-};
+const userData = {
+    user: {
+        name: '',
+        email: '',
+        rol: '',
+        picture: ''
+    }
+}
 
-function userReducer(state = user, action){
+function userReducer(state = userData , action){
     switch(action.type){
         case 'SIGIN':{
             return {
@@ -15,7 +17,7 @@ function userReducer(state = user, action){
             }
         }
         case 'LOGOUT':{
-            return {...state, user}
+            return {...state, user: userData.user}
         }
         default:
             return state;

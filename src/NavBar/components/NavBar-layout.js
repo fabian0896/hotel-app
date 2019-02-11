@@ -67,7 +67,7 @@ class NavBarLayout extends React.Component{
 
 function mapStateToProps(state, props){
     return{
-        user: state.user
+        user: state.userData.user
     }
 }
 

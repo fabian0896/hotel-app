@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import NavBarLayout from '../NavBar/components/NavBar-layout';
 import PageContainer from '../PageContainers/PageContainer';
@@ -41,11 +41,12 @@ class App extends Component {
         if(user){
           this.getUSerData(user.uid).then(()=>{
             this.setState({
-              isLogin: true,
-              loading: false
+                  isLogin: true,
+                  loading: false
             });
-          })
+          });
         } else{
+          this.props.dispatch({type: 'LOGOUT'});
           this.setState({
             isLogin: false,
             loading: false
@@ -70,7 +71,6 @@ class App extends Component {
             </PageContainer>
           </div>
         }
-
         {
           !this.state.isLogin && !this.state.loading &&
           <div className="App-login">
@@ -85,8 +85,6 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state, props){
-  return {}
-}
 
-export default connect(mapStateToProps)(App);
+
+export default withRouter(connect()(App));

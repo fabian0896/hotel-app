@@ -31,7 +31,7 @@ class Login extends React.Component {
         } else {
             firebase.auth().signInWithEmailAndPassword(value.email, value.password)
                 .then((user) => {
-                    console.log(user);
+                    //Login exitoso
                     setSubmitting(false);
                 })
                 .catch((err) => {
