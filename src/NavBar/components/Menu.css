@@ -7,6 +7,7 @@
     padding: 0;
     margin: 0;
     margin-top: 40px;
+    background: #353B48;
 }
 
 .Menu-link{
@@ -34,9 +35,11 @@
 }
 
 .link{
+    padding: 0;
     font-family: 'Roboto';
     font-weight: 300;
     font-size: 20px;
+    width: 100%;
     color: white;
     background: transparent;
     border: none;
@@ -48,6 +51,7 @@
     height: 100%;
     transition: .3s;
     outline: none;
+    box-sizing: border-box;
 }
 
 .link:hover{

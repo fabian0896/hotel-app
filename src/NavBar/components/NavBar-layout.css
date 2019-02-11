@@ -2,6 +2,7 @@
     width: 100%;
     background: #353B48;
     height: 100vh;
+    overflow: auto;
     box-shadow: 3px 0px 6px rgba(0, 0, 0, .16);
 }
 
@@ -19,6 +20,7 @@
         height: 60px;
         position: relative;
         z-index: 2;
+        overflow: initial;
     }
     .BurguerButton{
         display: block;
