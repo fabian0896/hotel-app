@@ -30,6 +30,10 @@ class Menu extends React.Component {
                         )
                     })
                 }
+                <hr/>
+                <li className="Menu-link">
+                    <button onClick={this.props.handleLogout} className="link">Salir</button>
+                </li>
             </ul>
         )
     }

@@ -2,6 +2,9 @@ import React from 'react';
 import './NavBar-layout.css';
 import UserInfo from './UserInfo';
 import Menu from './Menu';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { connect } from 'react-redux'
 
 class NavBarLayout extends React.Component{
     
@@ -19,6 +22,10 @@ class NavBarLayout extends React.Component{
         this.setState({
             showMenu: false
         })
+    }
+
+    handleLogout = ()=>{
+        firebase.auth().signOut()
     }
 
     render(){
@@ -47,12 +54,21 @@ class NavBarLayout extends React.Component{
             
             <div className="NavBar">
                 <button onClick={this.handleClick} className='BurguerButton'><i className={iconMenuClass}></i></button>
-                <UserInfo />
-                <Menu handleClose={this.handleClose} showMenu={this.state.showMenu} routes={routes} />
+                <UserInfo user={ this.props.user } />
+                <Menu
+                    handleLogout={ this.handleLogout } 
+                    handleClose={this.handleClose} 
+                    showMenu={this.state.showMenu} 
+                    routes={routes} />
             </div>
         )
     }
 }
 
+function mapStateToProps(state, props){
+    return{
+        user: state.user
+    }
+}
 
-export default NavBarLayout;
+export default connect(mapStateToProps)(NavBarLayout);

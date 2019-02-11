@@ -50,6 +50,7 @@
     color: #707070;
     font-size: 15px;
     margin-bottom: 5px;
+    display: block;
 }
 
 .Input{
@@ -77,10 +78,11 @@
     padding: 0 10px;
     outline: 0;
     font-size: 18px;
-    border: 1px solid #B7B7B7;
+    /* border: 1px solid #B7B7B7; */
     border-radius: 5px;
     padding: 0 10px 0 45px;
     box-sizing: border-box;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .46);
 }
 
 .Input input::placeholder{
@@ -97,6 +99,24 @@
 
 .Input input:focus + i {
     color: #353B48;
+}
+
+
+.Input input.error{
+    border: 1px solid red;
+}
+
+.Input input.error + i{
+    color: red;
+}
+
+
+.Input input.correct{
+    border: 2px solid #7F8FA6;
+}
+
+.Input input.correct + i{
+    color: #7F8FA6;
 }
 
 
@@ -136,6 +156,10 @@
     background: transparent;
     margin-bottom: 28px;
     cursor: pointer;
+}
+
+.btn-primary:disabled{
+    background: #b7b7b7;
 }
 
 @media screen and (max-width: 430px){

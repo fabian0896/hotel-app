@@ -8,17 +8,57 @@ import Inicio from '../Pages/Inicio/Inicio'
 import Reservas from '../Pages/Reservas/Reservas'
 import Login from '../Pages/Login/Login';
 
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+
+import { connect } from 'react-redux'
+
+
+
 class App extends Component {
 
   state = {
-    isLogin: false
+    isLogin: false,
+    loading: true
+  }
+
+  getUSerData = async (uid)=>{
+    const data = await firebase.firestore().collection('users').where('uid','==', uid).get();
+    let user = {}
+    data.forEach(doc =>{
+      user = doc.data();
+    });
+    this.props.dispatch({
+      type: 'SIGIN',
+      payload:user
+    });
+    return true;
+  }
+
+  componentDidMount(){
+      firebase.auth().onAuthStateChanged((user)=>{
+        if(user){
+          this.getUSerData(user.uid).then(()=>{
+            this.setState({
+              isLogin: true,
+              loading: false
+            });
+          })
+        } else{
+          this.setState({
+            isLogin: false,
+            loading: false
+          })
+        }
+      })
   }
 
   render() {
     return (
       <Fragment>
         {
-          this.state.isLogin &&
+          this.state.isLogin && !this.state.loading &&
           <div className="App">
             <NavBarLayout />
             <PageContainer>
@@ -32,7 +72,7 @@ class App extends Component {
         }
 
         {
-          !this.state.isLogin &&
+          !this.state.isLogin && !this.state.loading &&
           <div className="App-login">
             <Switch>
               <Route exact path="/login" component={Login} />
@@ -45,4 +85,8 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state, props){
+  return {}
+}
+
+export default connect(mapStateToProps)(App);
